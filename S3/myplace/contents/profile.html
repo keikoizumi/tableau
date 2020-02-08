@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+  <title>Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|Lato:400,700" rel="stylesheet">
+<!---------------------------- Bootstrap CSS ------------------------>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style type="text/css">
+    
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+  }
+  </style>
+</head>
+
+<body  style="background-color: #EEEEEE; color: black;">
+<!--------------------------------navbar----------------------------->   
+  <nav class="navbar navbar-expand-md navbar-light shadow sticky-top" style="background-color:#FFFFEE">
+    <div class="navbar-brand"></div>
+    <div class="clearfix">
+      <div style="color: #000099;font-size:xx-large ;font-weight: 700;">
+        Profile
+      </div>
+    </div>
+    <div class="ml-4 d-inline-block">
+      <div class="dropdown">
+        <!-- 切替ボタンの設定 -->
+        <a class="btn .btn-{themecolor}.rounded-pill dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <!-- ドロップメニューの設定 -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="./../top.html">My place</a>
+          <a class="dropdown-item" href="./todo.html">Todo</a>
+          <a class="dropdown-item" href="./knowledge/top.html">knowledge</a>
+          <a class="dropdown-item" href="https://educontensfortableau.s3.ap-northeast-1.amazonaws.com/tableau/top.html">Tableu</a>
+          <a class="dropdown-item" href="./scraping.html">Scraping</a>
+        </div><!-- /.dropdown-menu -->
+      </div><!-- /.dropdown -->
+    </div>
+  </nav>
+<!--------------------------container start-------------------------->   
+  <div class="container p-2" style="background-color: white;">
+    <ul>
+      <li>学生時代 島根大学　生物学専攻　卒業論文　脊椎動物の進化における肝臓の多様性　-爬虫綱肝臓における神経支配に関する研究-</li>
+      <li>学生時代　第二言語習得のメカニズムと日韓の外交に興味があり(ニュースでみる韓国の印象と実際の韓国とはどのような乖離があるのか)一年留学</li>
+      <li>2018年4月　入社(もともとは学生時代研究でやっていたことの延長線上で画像認識や生体構造の3D化に興味があった。しかし、それ以外にもITに幅広く関心があったため現在の会社に入社)</li>
+    </ul>
+    <div class="mt-4 mb-3">今までに触れた技術まとめ</div>
+      <table class="table mr-4 mt-5 mb-3">
+       <thead>
+         <tr>
+           <th>技術</th>
+           <th>期間</th>
+           <th>内容/詳細</th>
+         </tr>
+       </thead>
+        <tr>
+          <td>
+            <div>Java</div>
+          </td>
+          <td>
+            <div>1-2カ月</div>
+          </td>
+          <td>
+            <div>研修</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>PHP</div>
+          </td>
+          <td>
+            <div>6カ月</div>
+          </td>
+          <td>
+            <div>研修/ECサイト追加機能案件/言語学習アプリ(個人の趣味)
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Python</div>
+          </td>
+          <td>
+            <div>2カ月</div>
+          </td>
+          <td>
+            <div>Scrapngツール作成、言語学習ツール作成中(個人の趣味)</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>HTML/CSS/javascript</div>
+          </td>
+          <td>
+            <div>6カ月</div>
+          </td>
+          <td>
+            <div>ECサイト構築のため(個人の趣味)</div>
+            <div>Bootstrap4、jQueryをよく使う、chartjsも使ったことある</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>DB/SQL</div>
+          </td>
+          <td>
+            <div>5カ月</div>
+          </td>
+          <td>
+            <div>mySQL/Oracle/postgreSQL(Redshift)</div>
+            <div>基本的なDDl、DML文作成</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>クラウド</div>
+          </td>
+          <td>
+            <div>1カ月</div>
+          </td>
+          <td>
+            <div>AWS(S3)業務で利用</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>BIツール</div>
+          </td>
+          <td>
+            <div>3カ月</div>
+          </td>
+          <td>
+            <div>Tableau</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>テスト</div>
+          </td>
+          <td>
+            <div>10カ月</div>
+          </td>
+          <td>
+            <div>結合・システムテスト</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<!--------------------------------footer------------------------------->
+  <footer class="font-weight-bold fixed-bottom mt-3" style="background-color: #FFFFEE;">
+    <div style="color: #000099;font-size:larger;"></div>
+  </footer>
+<!---------------------------------CDN--------------------------------->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+
+</body>
+
+</html>

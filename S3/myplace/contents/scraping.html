@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+  <title>WEB SCRAPING WTH PYTHON</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|Lato:400,700" rel="stylesheet">
+<!---------------------------- Bootstrap CSS ------------------------>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style type="text/css">
+    
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+  }
+  </style>
+</head>
+
+<body  style="background-color: #EEEEEE; color: black;">
+<!--------------------------------navbar----------------------------->   
+  <nav class="navbar navbar-expand-md  navbar-light shadow sticky-top" style="background-color:#FFFFEE">
+    <div class="navbar-brand"></div>
+    <div class="clearfix">
+      <div style="color: #000099;font-size:xx-large ;font-weight: 700;">
+        WEB SCRAPING WTH PYTHON
+      </div>
+    </div>
+      <div class="dropdown">
+        <!-- 切替ボタンの設定 -->
+        <a class="btn .btn-{themecolor}.rounded-pill dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <!-- ドロップメニューの設定 -->
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="./../top.html">My place</a>
+          <a class="dropdown-item" href="./profile.html">Profile</a>
+          <a class="dropdown-item" href="./contents/knowledge/top.html">knowledge</a>
+          <a class="dropdown-item" href="./todo.html">Todo</a>
+          <a class="dropdown-item" href="https://educontensfortableau.s3.ap-northeast-1.amazonaws.com/tableau/top.html">Tableu</a>
+        </div><!-- /.dropdown-menu -->
+      </div><!-- /.dropdown -->
+  </nav>
+<!--------------------------container start-------------------------->   
+  <div class="container p-2" style="background-color: white;">
+    <table class="table mr-4 mt-5">
+      <div>去年年末からスタートした待望のweb scrapigツール(誰も待ってませんが)完成です！<span style="text-decoration: line-through;">(まだver1.0じゃん)</span></div>
+      <h5 class="mt-4">利用技術(ざっくりと)</h5>
+      <thead>
+        <tr>
+          <th>内容</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+        <tr>
+          <td>
+            <div>SPA(SINGE PAGE APPLICATION)</div>
+          </td>
+          <td>
+            <div>フロント側でjQuery(Ajax)を利用。HTMLはTOP1枚のみなので巷で流行っているReact、Vueなどのフレームワークは使っていません。
+              <span style="text-decoration: line-through;">今時jQuery?そんなこといわないでください。</span>
+              レイアウトにBootstrap4を使っています。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>サーバーサイド</div>
+          </td>
+          <td>
+            <div>python(3.8.1)、軽量フレームワークのbottleで実装しています。
+              なぜbottle?Djangoでもいいやんー＞bottleはファイル一枚で、今回ログイン認証機能等の実装予定はなかったため、無駄の少ないフレームワークを採用いました。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>ブラウザ制御</div>
+          </td>
+          <td>
+            <div>seleniumを利用しています。</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>データベース</div>
+          </td>
+          <td>
+            <div>MySQL(Ver 8.0.17)を利用しています。</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>環境</div>
+          </td>
+          <td>
+            <div>windows10でしか実行していません。</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="m-2">ソースは一応githubに格納しています</div>
+    <a href="https://github.com/keikoizumi/scraping.git">https://github.com/keikoizumi/scraping.git</a>
+
+    <div class="m-2">このツールを自分用にカスタマイズして使いたい方は私にご一報下さい。環境構築などアドバイスします。</div>
+
+<!-------------------------youtube---------------------------->
+    <div class="video">
+    <iframe width="860" height="615" src="https://www.youtube.com/embed/rqshqFGB7pQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+<!-------------------------container finish---------------------------->
+  </div>
+<!--------------------------------footer------------------------------->
+  <footer class="font-weight-bold fixed-bottom" style="background-color: #FFFFEE;">
+    <div style="color: #000099;font-size:larger;"></div>
+  </footer>
+<!---------------------------------CDN--------------------------------->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+
+</body>
+
+</html>

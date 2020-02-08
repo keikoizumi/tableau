@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+  <title>IT業界を支える法則あれこれ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|Lato:400,700" rel="stylesheet">
+<!---------------------------- Bootstrap CSS ------------------------>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #EEEEEE; color: black;">
+
+<!--------------------------------navbar----------------------------->   
+  <nav class="navbar navbar-expand-md  navbar-light shadow sticky-top .col-sm-6" style="background-color:#FFFFEE;">
+    <div class="navbar-brand"><a href="./top.html"></a></div>
+    <div class="clearfix .mr-auto">
+      <div style="color: #000099;font-size:xx-large ;font-weight: 700;">
+        IT業界を支える法則あれこれ
+      </div>
+      <div class="ml-4 d-inline-block">
+        <div class="dropdown">
+          <!-- 切替ボタンの設定 -->
+          <a class="btn .btn-{themecolor}.rounded-pill dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <!-- ドロップメニューの設定 -->
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="./top.html">top</a>
+          </div><!-- /.dropdown-menu -->
+        </div><!-- /.dropdown -->
+      </div>
+  </nav>
+<nav>
+<!--------------------------container start-------------------------->   
+  <div class="container p-2 .col-sm-6" style="background-color: white;">
+<!--------------------------------card------------------------------->   
+    <div class="card-body alert alert-danger mt-4 mb-4">
+      <div class="font-weight-bold" style="color:#000099;">ハインリッヒの法則</div>
+    </div>
+    <div class="ml-4 mr-4 mb-3 mt-1">
+      <div>ハインリッヒの法則とは労働災害における経験側の1つである。１つの重大事故の背後には29の軽微な事故があり、その背景には300の異常が存在する。(wikipedia)
+        <div class="mt-4">医療、建築などさまざまな業界の現場で”ヒヤリハット”と呼ばれている活動の根拠となっている法則。医療、建築のみならず、IT業界でも適応できそうですね。重大なバグが1つ、その背後には軽微なバグが29、その背後には300の。。さすがにそれはないか？？
+         軽微と思いがちなのはプロジェクトでインデントのどのコーディングスタイルが統一されていない、可読性の低いコードが書かれていること。これはバグにつながりますね。
+          また、コードレビューを軽率にしているプロジェクトもバグが多くなるでしょう。
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body alert alert-primary mt-2">
+      <div class="font-weight-bold" style="color:#000099;">KISSの原則</div>
+    </div>     
+    <div class="ml-4 mr-4 mb-3 mt-1">
+      KISSの原則とは<div class="font-italic mt-4 mb-4"><b>”keep it sinple, stupid”(シンプルにしておけ！この間抜け)</b></div>という経験的な原則。その意味するところは、設計の単純性(完結性)は成功
+      への鍵だということと、不必要な複雑性は避けるべきだということである。(wikipedia)
+      <div class="mt-4">シンプルにわかりやすい原則だと思うが、実際の現場は無駄に冗長であったり例外が多かったり、わかりづらくなっていることがありますね。
+        その原因は何でしょうか？仮説ですが日本のSIのゼネコン体質や企業が内製せず、外注することで、
+        開発者がころころ変わるので、ハインリッヒしかり、KISSしかり、わかりきっていることが繰り返されるのではないでしょうか？
+      </div>
+    </div>
+    
+    <div class="card-body alert alert-primary mt-2">
+      <div class="font-weight-bold" style="color:#000099;">車輪の再発明</div>
+    </div>     
+    <div class="ml-4 mr-4 mb-3 mt-1">
+      車輪の再発明は、車輪を題材にした慣用句であり、世界中で使われている。
+      「広く受け入れられ確立した技術や解決法を無視して、同様のものを再び一から作ってしまうこと」を意味する。(wikipedia)
+      <div class="mt-4">
+       勉強のために一から作ってみるというのはよいかもしれません。しかし、現場で便利ライブラリがあるのに、使わない手はなさそうですね。
+       また、新しいもの(コード)を作る前に、それって既にあるんじゃないっけと考え、既存を流用する姿勢も冗長化と効率化のために非常に大切だと思います。
+      </div>
+    </div>
+    <div>
+       　 
+     <!--
+          <li class="ml-4">LODとフィルターの順番</br>
+        　　(<a href='https://help.tableau.com/current/pro/desktop/ja-jp/order_of_operations.htm' target="_blank">https://help.tableau.com/current/pro/desktop/ja-jp/order_of_operations.htm</a>)</l class=""i class="">
+            <img class="img-fluid" src="./../img/02/pipeline.png" alt="img">
+          <div class="ml-4 mb-3 mt-1">
+            <div>ここで着目したいのはContext Filters、Fixed、Dimension Filtersのフィルター制御順である。</div>
+            <div>Dimension FiltersよりもFixedが上位にあり、FiexedよりもContext Filtersが上位にある。
+            </div>
+          </div>
+        </ol>
+         -->
+<!--------------------------------card-------------------------------      
+    <div class="card-body alert-success mb-3">
+      <div class="font-weight-bold" style="color:#000099;">練習問題(Fixedのみ)</div>
+    </div>
+
+      <div class="ml-4 mb-5">
+
+        <div class="mt-3 mb-3">
+          <input type="checkbox"  checked=" checked">ディメンションにカテゴリ、サブカテゴリを入れる
+          テキストマークに売上を入れる</input>
+        </div>
+          <ol class="mb-5">
+            <li>カテゴリ全体の売り上げは？</li>
+            <li>カテゴリ家具の売り上げは？</li>
+            <li>サブカテゴリテーブルは家具全体の売り上げの何％でしょう？</li>
+            <li>サブカテゴリから家具、本棚を除外した場合、テーブルの売り上げは何％ですか？</li>
+          </ol>
+
+      </div>
+ -->
+   
+<!--------------------------------card-------------------------------    
+    <div class="card-body alert-warning mt-3">
+        <div class="font-weight-bold" style="color:#000099;"></div>
+    </div>
+
+    <div class="mt-3 mb-5">
+      <ol>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+-------------------------container finish---------------------------->
+  </div>
+</div>>
+
+<!--------------------------------footer------------------------------->
+  <footer class="font-weight-bold fixed-bottom .col-sm-6" style="background-color: #FFFFEE;">
+    <div style="color: #000099;font-size:larger;">2020/02</div>
+  </footer>
+<!---------------------------------CDN--------------------------------->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+
+</body>
+</html>

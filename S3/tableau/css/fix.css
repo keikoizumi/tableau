@@ -1,0 +1,16 @@
+.left-ads{/* 左側の要素 */
+position:absolute;/* body要素を基準にしてます */
+right: 50%;/* 画面中央に要素を表示 */
+margin-right:600px;/* 要素から画面中央への長さ */
+top:100px;/* 左側要素の初期位置（高さ） */
+}
+.right-ads{/* 右側の要素 */
+position:absolute;/* body要素を基準にしてます */
+left: 50%;/* 画面中央に要素を表示 */
+margin-left:600px;/* 要素から画面中央への長さ */
+top:100px;/* 右側要素の初期位置（高さ） */
+}
+.outside-fixed{/* 固定表示（左右共通） */
+position:fixed;/* スクロールしても固定表示 */
+top:10px;/* 固定表示した際の画面上部への余白 */
+}
