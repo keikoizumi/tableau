@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+
 <head>
-  <title>gallery</title>
+  <title>WEB SCRAPING WTH PYTHON</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Google Fonts -->
@@ -17,13 +18,13 @@
 
 <body  style="background-color: #EEEEEE; color: black;">
 <!--------------------------------navbar----------------------------->   
-  <nav class="navbar navbar-expand-md navbar-light shadow sticky-top" style="background-color:#FFFFEE">
+  <nav class="navbar navbar-expand-md  navbar-light shadow sticky-top" style="background-color:#FFFFEE">
+    <div class="navbar-brand"></div>
     <div class="clearfix">
       <div style="color: #000099;font-size:xx-large ;font-weight: 700;">
-        gallery
+        WEB SCRAPING WTH PYTHON V2
       </div>
     </div>
-    <div class="ml-4 d-inline-block">
       <div class="dropdown">
         <!-- 切替ボタンの設定 -->
         <a class="btn .btn-{themecolor}.rounded-pill dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,52 +32,77 @@
         </a>
         <!-- ドロップメニューの設定 -->
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="https://kkmyplace.s3-ap-northeast-1.amazonaws.com/top.html">My place</a>
-          <a class="dropdown-item" href="https://kkknowledge.s3-ap-northeast-1.amazonaws.com/knowledge/top.html">Knowledge</a>
-          <a class="dropdown-item" href="https://educontensfortableau.s3.ap-northeast-1.amazonaws.com/tableau/top.html">Tableau</a>
+          <a class="dropdown-item" href="./top.html">Gallery</a>
         </div><!-- /.dropdown-menu -->
       </div><!-- /.dropdown -->
-    </div>
   </nav>
 <!--------------------------container start-------------------------->   
   <div class="container p-2" style="background-color: white;">
-    <div class="mt-4 mb-3">作品を紹介します</div>
-      <table class="table mr-4 mt-5 mb-3">
-       <thead>
-         <tr>
-           <th>タイトル</th>
-           <th>作成日</th>
-         </tr>
-       </thead>
-       <tr>
-        <td>
-          <div><a href="./scraping2.html">Web scraping with python v2</a></div>
-        </td>
-        <td>
-          <div>2020年02月</div>
-        </td>
-      </tr>
-       <tr>
-        <td>
-          <div><a href="./lang.html">言語学習用ツール Lang ver1.0</a></div>
-        </td>
-        <td>
-          <div>2020年02月</div>
-        </td>
-      </tr>
+    <table class="table mr-4 mt-5">
+      <div>web scrapigツールを使いやすく、機能を一部改変しました</div></br>
+      
+      <div>(1)キーワードでgoogle検索</div>
+      <div>(2)検索結果はCSVダウンロード可能</div>
+      <h5 class="mt-4">利用技術(ざっくりと)</h5>
+      <thead>
+        <tr>
+          <th>内容</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
         <tr>
           <td>
-            <div><a href="./scraping.html">Web scraping with python v1</a></div>
+            <div>SPA(SINGE PAGE APPLICATION)</div>
           </td>
           <td>
-            <div>2020年02月</div>
+            <div>フロント側でjQuery(Ajax)を利用しています。
+              レイアウトにBootstrap4を使っています。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>サーバーサイド</div>
+          </td>
+          <td>
+            <div>python(3.8.1)、軽量フレームワークのbottleで実装しています。
+           </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>ブラウザ制御</div>
+          </td>
+          <td>
+            <div>seleniumを利用しています。</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>データベース</div>
+          </td>
+          <td>
+            <div>MySQL(Ver 8.0.17)を利用しています。</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>環境</div>
+          </td>
+          <td>
+            <div>windows10でしか実行していません。</div>
           </td>
         </tr>
       </tbody>
     </table>
+    
+<!-------------------------youtube---------------------------->
+    <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Yvb5m4GJv_4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    </div>
+<!-------------------------container finish---------------------------->
   </div>
 <!--------------------------------footer------------------------------->
-  <footer class="font-weight-bold fixed-bottom mt-3" style="background-color: #FFFFEE;">
+  <footer class="font-weight-bold fixed-bottom" style="background-color: #FFFFEE;">
     <div style="color: #000099;font-size:larger;"></div>
   </footer>
 <!---------------------------------CDN--------------------------------->

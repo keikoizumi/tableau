@@ -1,0 +1,77 @@
+<HTML>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>AWS 簡易WEBアプリ(デモ)</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript">
+ 
+            $(function() {
+ 
+                var URL = "https://8xy20kcx1l.execute-api.ap-northeast-1.amazonaws.com/demo";
+ 
+                $("#submit").click(function() {
+                    $("#submit").attr("disabled", "disabled");
+ 
+                    $.ajax({
+                        type: "GET",
+                        url: URL, 
+                        contentType: 'application/JSON',
+                        dataType: "json",
+                        error: function() {
+                            alert('ERROR: EXE');
+                            $('#re').empty();
+                            $('#re').append('<p>失敗(管理者に問い合わせて下さい)</p>');
+                            $("#submit").removeAttr("disabled");
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            $('#re').empty();
+                            $('#table').empty(); 
+                            $('#re').append('<p>通信成功</p>');
+                            for (var i = 0; i < data.length; i++) {
+                                $('#table').append('<tr><td>'+data[i].person_id+'&ensp;</td><td>'+data[i].name+'</td></tr>');
+                            }
+                            $("#submit").removeAttr("disabled");
+                        }
+                    });
+                });
+ 
+            });
+        </script>
+    </head>
+    <body>
+    <div style="margin: 50px;margin-top: 30px;">
+        <h1>AWS 簡易WEBアプリ(デモ)</h1>
+        <div style="margin: 30px;">
+            <b>目的</b>:AWS製品を利用して簡易WEBアプリを作るデモを行う&ensp;
+            (S3 → AIP Gateway → Lamdba → DynamoDB )</br></br>
+            <b>つまずきポイント</b>:今回AjaxでAPIを投げているのでCORS対策を入れる必要がある。</br></br>
+            <b>課題</b>:API TYPE(WebSocket API,HTTP API,REST API,REST API Private)は何が異なるのか理解する。</br>
+                セキュリティーに関してS3ではポリシーの書き方、IAMロールなどを理解する</br></br>
+            <b>参考</b>：
+            <a href="https://dev.classmethod.jp/cloud/aws/serverless-first-dynamodb/">dynamodb</a>&ensp;
+            <a href="https://dev.classmethod.jp/cloud/aws/serverless-first-lambda/">lambda</a>&ensp;
+            <a href="https://dev.classmethod.jp/cloud/aws/serverless-first-apigateway/">api gateway</a>&ensp;
+            <a href="https://qiita.com/yohachi/items/30801e2de6e490304d7b">CORS対策</a></br></br>
+            <b>テスト実行</b>：
+                <button id='submit' style="background-color:coral">実行</button></td>
+            <div id="re" style="color:red"></div>
+
+            <table border="3" rules="cols">
+                <div id="table"></div>
+            </table></br>
+            <b>google検索一覧(キーワード:lambda apigateway)</b>：
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="table"><tr><td>lambda apigateway</td><td><a href="https://hack-le.com/aws-lambda-api-pathparameters/" target="_blank" style="font-size:large;">AWS Lambda + API Gateway で/hoge/{group}/{user}のように ...</a></td><td> (2020-02-10 22:37:26)</td></tr><tr><td>lambda apigateway</td><td><a href="https://togetter.com/li/1148970" target="_blank" style="font-size:large;">データ節約で実現するサーバレス AWS APIGateway + Python ...</a></td><td> (2020-02-10 22:37:26)</td></tr><tr><td>lambda apigateway</td><td><a href="https://rso.hateblo.jp/entry/2019/02/17/232229" target="_blank" style="font-size:large;">プロキシ統合と使用してLambdaのレスポンスをそのままAPI ...</a></td><td> (2020-02-10 22:37:25)</td></tr><tr><td>lambda apigateway</td><td><a href="https://cloudonaut.io/create-a-serverless-restful-api-with-api-gateway-swagger-lambda-and-dynamodb/" target="_blank" style="font-size:large;">Create a serverless RESTful API with API Gateway, Swagger ...</a></td><td> (2020-02-10 22:37:25)</td></tr><tr><td>lambda apigateway</td><td><a href="https://learn.hashicorp.com/terraform/aws/lambda-api-gateway" target="_blank" style="font-size:large;">Serverless Applications with AWS Lambda and API Gateway ...</a></td><td> (2020-02-10 22:37:25)</td></tr><tr><td>lambda apigateway</td><td><a href="https://blog.api.rakuten.net/jp-api-gateway/" target="_blank" style="font-size:large;">API Gatewayの概要とメリット - Rakuten RapidAPI Blog</a></td><td> (2020-02-10 22:37:25)</td></tr><tr><td>lambda apigateway</td><td><a href="https://intellipaat.com/community/17199/aws-apigateway-cors-for-lambda-proxy-does-not-apply" target="_blank" style="font-size:large;">AWS APIGateway CORS for Lambda Proxy does not apply ...</a></td><td> (2020-02-10 22:37:25)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.yamamanx.com/rds-vpc-lambda-api-gateway-cloudfront-waf-api/" target="_blank" style="font-size:large;">RDS + VPC + Lambda + API Gateway + CloudFront + WAF + ...</a></td><td> (2020-02-10 22:37:24)</td></tr><tr><td>lambda apigateway</td><td><a href="https://devlog.arksystems.co.jp/2018/04/04/4807/" target="_blank" style="font-size:large;">AWS LambdaをVPC内に配置する際の注意点 | そるでぶろぐ</a></td><td> (2020-02-10 22:37:24)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.youtube.com/watch?v=9TBwuRjmLqQ" target="_blank" style="font-size:large;">AWS APIGateway + Python Lambda + NEologdで作るサーバ ...</a></td><td> (2020-02-10 22:37:24)</td></tr><tr><td>lambda apigateway</td><td><a href="https://hacknote.jp/archives/47488/" target="_blank" style="font-size:large;">slackのボタンを押した時の情報をlambdaで受け取ろうとしたら ...</a></td><td> (2020-02-10 22:37:19)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.magata.net/memo/index.php?Lambda%A1%F5API%20Gateway%A4%F2CloudFormation%A4%C7%BA%EE%C0%AE%A4%B9%A4%EB" target="_blank" style="font-size:large;">Lambda＆API GatewayをCloudFormationで作成する - 闘うIT ...</a></td><td> (2020-02-10 22:37:19)</td></tr><tr><td>lambda apigateway</td><td><a href="https://tech.mti.co.jp/entry/2017/04/21/180029" target="_blank" style="font-size:large;">APIGatewayの新機能Request Validationを試してみた ...</a></td><td> (2020-02-10 22:37:19)</td></tr><tr><td>lambda apigateway</td><td><a href="https://blog.pirox.dev/2018/08/28/102/" target="_blank" style="font-size:large;">モーニングコールが欲しくって。- API Gateway / Lambda 編 ...</a></td><td> (2020-02-10 22:37:18)</td></tr><tr><td>lambda apigateway</td><td><a href="https://teratail.com/questions/236055" target="_blank" style="font-size:large;">aws lambdaでapigatewayを新規作成しようとするとエラー - Teratail</a></td><td> (2020-02-10 22:37:18)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.ketancho.net/entry/2017/12/13/210000" target="_blank" style="font-size:large;">AWS Lambda から外部 API を呼び出す - log4ketancho</a></td><td> (2020-02-10 22:37:18)</td></tr><tr><td>lambda apigateway</td><td><a href="https://bl.ocks.org/magnetikonline/c314952045eee8e8375b82bc7ec68e88" target="_blank" style="font-size:large;">CloudFormation example for an API Gateway endpoint calling ...</a></td><td> (2020-02-10 22:37:18)</td></tr><tr><td>lambda apigateway</td><td><a href="https://pycon.jp/2017/ja/schedule/presentation/40/" target="_blank" style="font-size:large;">プレゼンテーション：AWS APIGateway + Python Lambda + ...</a></td><td> (2020-02-10 22:37:17)</td></tr><tr><td>lambda apigateway</td><td><a href="https://liginc.co.jp/430297" target="_blank" style="font-size:large;">【面倒は】API Gateway + Lambda + CloudWatch LogsでPOST ...</a></td><td> (2020-02-10 22:37:17)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.terraform.io/docs/providers/aws/r/api_gateway_integration.html" target="_blank" style="font-size:large;">AWS: aws_api_gateway_integration - Terraform by HashiCorp</a></td><td> (2020-02-10 22:37:17)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.skyarch.net/blog/?p=12933" target="_blank" style="font-size:large;">CloudFront+APIGateway+Lambda構成のレスポンスタイム改善 ...</a></td><td> (2020-02-10 22:37:12)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.slideshare.net/makinog3/aws-lambdaapi-gateway" target="_blank" style="font-size:large;">AWS LambdaとAPI Gatewayでサーバレスなシステム構築に ...</a></td><td> (2020-02-10 22:37:12)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.tantan-biyori.info/blog/2019/01/amazon-api-gatewayapi.html" target="_blank" style="font-size:large;">Amazon API Gatewayを使ってAPIを作る - 淡々日和 - 備忘録</a></td><td> (2020-02-10 22:37:12)</td></tr><tr><td>lambda apigateway</td><td><a href="https://techblog.recochoku.jp/196" target="_blank" style="font-size:large;">勤怠連絡メールをAPIGatewayとlambdaで作ってみた | レコチョク ...</a></td><td> (2020-02-10 22:37:11)</td></tr><tr><td>lambda apigateway</td><td><a href="https://mashpote.net/2019/08/26/aws-api-gateway%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%97%E3%81%A6%E3%81%BF%E3%81%A6%E6%80%9D%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/" target="_blank" style="font-size:large;">AWS API Gatewayを実装してみて分かったこと | Mashpote</a></td><td> (2020-02-10 22:37:11)</td></tr><tr><td>lambda apigateway</td><td><a href="https://starhoshi.hatenablog.com/entry/2017/01/07/APIGateway_%2B_Lambda_%2B_NodeJS_%E3%81%A7_rest_api_%E3%82%92%E4%BD%9C%E3%82%8B" target="_blank" style="font-size:large;">APIGateway + Lambda + NodeJS で rest api を作る - star__ ...</a></td><td> (2020-02-10 22:37:11)</td></tr><tr><td>lambda apigateway</td><td><a href="https://3panda.github.io/posts/20180719/" target="_blank" style="font-size:large;">AWS Lambda( + APIGateway) を使ったAjaxなWebフォームを ...</a></td><td> (2020-02-10 22:37:11)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.tdi.co.jp/miso/amazon-cognito-api-gateway" target="_blank" style="font-size:large;">Amazon Cognitoの認証情報を取得してみる～API ...</a></td><td> (2020-02-10 22:37:11)</td></tr><tr><td>lambda apigateway</td><td><a href="https://jp.corp-sansan.com/mimi/2018/04/tech9-apigateway-aws.html" target="_blank" style="font-size:large;">【Techの道も一歩から】第9回「API GatewayとAWS Lambda ...</a></td><td> (2020-02-10 22:37:10)</td></tr><tr><td>lambda apigateway</td><td><a href="https://engineers.weddingpark.co.jp/?p=1333" target="_blank" style="font-size:large;">やってみよう！AWSでWEBサーバー環境構築（Lambda|API ...</a></td><td> (2020-02-10 22:37:10)</td></tr><tr><td>lambda apigateway</td><td><a href="https://serverless.com/framework/docs/providers/aws/events/apigateway/" target="_blank" style="font-size:large;">Serverless Framework - AWS Lambda Events - API Gateway</a></td><td> (2020-02-10 22:37:05)</td></tr><tr><td>lambda apigateway</td><td><a href="https://tech-cci.io/archives/1399" target="_blank" style="font-size:large;">AWS Lambdaで簡単なREST APIを作ってみた | CCI TECH BLOG</a></td><td> (2020-02-10 22:37:05)</td></tr><tr><td>lambda apigateway</td><td><a href="https://note.com/daharas/n/n4de9403c5e1e" target="_blank" style="font-size:large;">Lambda + API Gatewayの初歩の初歩の初歩（レスポンス）で転ん ...</a></td><td> (2020-02-10 22:37:05)</td></tr><tr><td>lambda apigateway</td><td><a href="https://oji-cloud.net/2019/07/02/post-2258/" target="_blank" style="font-size:large;">API Gateway + Lambda のタイムアウト設定 | Oji-Cloud</a></td><td> (2020-02-10 22:37:05)</td></tr><tr><td>lambda apigateway</td><td><a href="http://blog.serverworks.co.jp/tech/2017/02/01/apigateway-lambda-cloudwatchlogs/" target="_blank" style="font-size:large;">API Gateway＋Lambdaでのステージ管理やCloudWatch Logs ...</a></td><td> (2020-02-10 22:37:04)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.beex-inc.com/blog/serverless-architecture-consideration-using-aws-lambda/" target="_blank" style="font-size:large;">【5分でわかる】AWS Lambda連携するときに、誰もが調べるアプリ ...</a></td><td> (2020-02-10 22:37:04)</td></tr><tr><td>lambda apigateway</td><td><a href="https://techplay.jp/event/769891" target="_blank" style="font-size:large;">AWSハンズオン入門セミナー12回目Lambda+APIGateWayによる ...</a></td><td> (2020-02-10 22:37:04)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.codeflow.site/ja/article/aws-lambda-api-gateway" target="_blank" style="font-size:large;">API GatewayでAWS Lambdaを使用する - CodeFlow</a></td><td> (2020-02-10 22:37:04)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.cresco.co.jp/blog/entry/445/" target="_blank" style="font-size:large;">Amazon API GatewayとLambdaを利用したサーバレスなWeb ...</a></td><td> (2020-02-10 22:37:04)</td></tr><tr><td>lambda apigateway</td><td><a href="https://gist.github.com/3panda/8f22cc1895e94f17cb20420527a23467" target="_blank" style="font-size:large;">Lambda、APIGateway、Ajaxの作業メモ · GitHub</a></td><td> (2020-02-10 22:37:03)</td></tr><tr><td>lambda apigateway</td><td><a href="https://gist.github.com/3panda/8f22cc1895e94f17cb20420527a23467" target="_blank" style="font-size:large;">Lambda、APIGateway、Ajaxの作業メモ · GitHub</a></td><td> (2020-02-10 22:36:58)</td></tr><tr><td>lambda apigateway</td><td><a href="https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/with-on-demand-https-example.html" target="_blank" style="font-size:large;">チュートリアル: Amazon API Gateway で AWS Lambda を使用する</a></td><td> (2020-02-10 22:36:57)</td></tr><tr><td>lambda apigateway</td><td><a href="https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html" target="_blank" style="font-size:large;">API Gateway の Lambda プロキシ統合をセットアップする</a></td><td> (2020-02-10 22:36:57)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.datastadium.co.jp/engineer/e-reports/5245" target="_blank" style="font-size:large;">AWS Lambda + API Gateway + S3 で簡易Webアプリケーション ...</a></td><td> (2020-02-10 22:36:57)</td></tr><tr><td>lambda apigateway</td><td><a href="https://www.wakuwakubank.com/posts/519-aws-lambda-introduction/" target="_blank" style="font-size:large;">AWS｜【入門】LambdaとAPI Gatewayの使い方 - わくわくBank</a></td><td> (2020-02-10 22:36:57)</td></tr><tr><td>lambda apigateway</td><td><a href="https://cloudpack.media/49849" target="_blank" style="font-size:large;">API Gateway から Lambda にパラメータを渡す | cloudpack.media</a></td><td> (2020-02-10 22:36:57)</td></tr><tr><td>lambda apigateway</td><td><a href="https://dev.classmethod.jp/cloud/aws/serverless-first-apigateway/" target="_blank" style="font-size:large;">初めてのサーバーレスアプリケーション開発 ～API Gatewayから ...</a></td><td> (2020-02-10 22:36:56)</td></tr><tr><td>lambda apigateway</td><td><a href="https://qiita.com/vankobe/items/ab5bc6487c7e07cb3aba" target="_blank" style="font-size:large;">API GatewayとLambdaでAPI作成のチュートリアル - Qiita</a></td><td> (2020-02-10 22:36:56)</td></tr><tr><td>lambda apigateway</td><td><a href="https://qiita.com/UpAllNight/items/8a347be69db7653657d0" target="_blank" style="font-size:large;">【AWS】APIGateway・Lambda動作の流れをわかりやすく解説 - Qiita</a></td><td> (2020-02-10 22:36:56)</td></tr><tr><td>lambda apigateway</td><td><a href="https://qiita.com/tamura_CD/items/46ba8a2f3bfd5484843f" target="_blank" style="font-size:large;">API Gateway + LambdaでREST API開発を体験しよう [10分で ...</a></td><td> (2020-02-10 22:36:56)</td></tr></tbody>
+              </table>
+        </div>
+    </div>
+    </body>
+</HTML>
